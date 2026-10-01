@@ -102,3 +102,32 @@
 .growth-student { position:absolute; width:722px; height:515px; max-width:none; object-fit:contain; left:-22px; bottom:-34px; }
 .growth-visual>.progress-card { position:absolute; top:212px; right:-20px; z-index:2; }
 .growth-helix { width:160px; right:-22px; top:84px; z-index:3; }
+.creator-features { min-height:710px; padding-top:30px; padding-bottom:100px; }
+.creator-visual { height:580px; }
+.creator-student { width:485px; height:auto; position:absolute; top:-34px; left:36px; }
+.revenue-card { background:var(--blue-deep); color:white; width:258px; padding:16px; }
+.revenue-card p { line-height:1.2; font-size:16px; }
+.revenue-card small { display:block; font-size:10px; line-height:1.2; }
+.revenue-card strong { display:block; margin-top:8px; font-weight:700; font-size:24px; line-height:1.2; }
+.revenue-card .progress-track { margin-top:10px; }
+.creator-visual>.revenue-card { position:absolute; top:0; left:0; }
+.creator-visual>.revenue-year { top:150px; width:134px; }
+.revenue-change { background:var(--lime-bright); color:var(--ink); font-size:10px; padding:4px 8px; border-radius:999px; display:inline-block; margin-top:12px; }
+.creator-visual>.happy-card { position:absolute; right:42px; bottom:87px; }
+.creator-helix { width:165px; right:94px; top:97px; }
+.creator-copy>p { max-width:580px; }
+.creator-benefits { list-style:none; margin:40px 0 0; padding:0; }
+.creator-benefits li { display:flex; align-items:center; gap:10px; font-size:18px; margin-bottom:14px; }
+.creator-benefits li>span { width:20px; height:20px; background:var(--blue); color:white; border-radius:50%; display:grid; place-items:center; }
+.creator-benefits .icon { width:16px; height:16px; }
+.creator-cta { position:relative; overflow:hidden; min-height:488px; padding:84px 0; text-align:center; }
+.cta-copy { position:relative; z-index:2; }
+.cta-copy h2 { font-size:44px; }
+.cta-copy p { max-width:960px; margin:44px auto 40px; font-size:18px; }
+.cta-decorations .shape-a { width:266px; left:-100px; top:-95px; }
+.cta-decorations .shape-b { width:140px; left:14%; top:28px; }
+.cta-decorations .shape-c { width:270px; left:4%; bottom:-150px; }
+.cta-decorations .shape-d { width:213px; right:-35px; top:36px; }
+.cta-decorations .shape-e { width:145px; right:14%; top:24px; }
+.cta-decorations .shape-f { width:240px; right:3%; bottom:-85px; }
+.cta-decorations .shape-g { width:130px; left:-10px; bottom:74px; }
