@@ -12,7 +12,7 @@ export function Decorations({ variant = 'hero' }: { variant?: 'hero' | 'cta' }) 
       : [
           ['helix-lime-large.webp', 'shape-a'],
           ['helix-white-small.webp', 'shape-b'],
-          ['ring-lime.webp', 'shape-c'],
+          ['ring-lime-full.webp', 'shape-c'],
           ['cylinder-white.webp', 'shape-d'],
           ['pyramid-lime.webp', 'shape-e'],
           ['helix-lime.webp', 'shape-f'],

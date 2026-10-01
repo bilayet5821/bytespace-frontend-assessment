@@ -41,6 +41,21 @@ Source limitations are documented in `docs/DESIGN_NOTES.md`: course photo framin
 - The connected GitHub tools do not expose repository creation. No remote push or actual PR has occurred. `docs/PULL_REQUEST.md` contains the prepared description.
 - No merge, Vercel deployment or employer portal submission has occurred.
 
+## Final visual-polish pass
+
+Final comparison used a 1440 CSS-pixel browser viewport at default 100% zoom (device scale 1), alongside every supplied Home section and both auth references. No browser zoom reduction was used to choose layout positions.
+
+- `src/components/decorative/Decorations.tsx`: CTA now uses the existing complete lime ring asset; no new image was generated or bundled.
+- `src/styles/home.css`: restored the bottom-left CTA ring with an intentional lower-edge crop; corrected all seven CTA decoration positions/scales; explicitly retained `#003BE2`; moved the hero lime spiral down 10px and enlarged/repositioned its white triangle; softened feature/testimonial glows; aligned footer link columns and newsletter width.
+- `src/styles/auth.css`: moved the shared Login/Register white spiral up 35px and above the floating card; adjusted ring height and triangle scale/position. The existing 580px-wide, 784px-minimum-height form panel was preserved after reference comparison.
+- `src/styles/responsive.css`: scaled and repositioned CTA decorations at laptop/tablet widths to keep text clear, and adjusted the mobile CTA ring scale/crop for the complete source asset.
+
+The six course cards, learning-path circles/icons, partner placeholders, feature rows, testimonial cards and remaining hero decorations were inspected and preserved. Content, data, functionality, routes, typography tokens and component architecture are unchanged. Source-image crops and recreated partner/category icons retain the previously documented limitations; this is a close reconstruction, not a pixel-perfect certification.
+
+The final production browser run passed all 18 route/width cases and 35 assertions again. Desktop, laptop, tablet and mobile renders were inspected. Direct refreshes on all three routes passed. No failed image/resource, console/runtime error or document horizontal overflow was observed. Oxlint, TypeScript, build and formatting checks all exited 0. Automated accessibility checks returned zero violations on all three routes. Testing covers Chromium only.
+
+No push, PR, merge, deployment or employer submission was performed during this pass. The final polish is one additional commit; existing history is preserved.
+
 ## Next review step
 
 Review the local app with `npm ci` and `npm run dev`. Create the public repository or authorize browser fallback for repository creation. Then publish the clean base/feature history and open the review PR; keep deployment and merge deferred.

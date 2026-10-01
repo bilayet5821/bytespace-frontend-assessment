@@ -1,5 +1,4 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
 
 > bytespace-frontend-assessment@1.0.0 lint
 > oxlint
-
-npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.

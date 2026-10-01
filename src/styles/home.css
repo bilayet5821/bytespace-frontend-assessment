@@ -245,7 +245,7 @@
 .hero-decorations .shape-a {
   width: 266px;
   left: 0;
-  top: 210px;
+  top: 220px;
 }
 .hero-decorations .shape-b {
   width: 177px;
@@ -263,9 +263,9 @@
   top: 220px;
 }
 .hero-decorations .shape-e {
-  width: 145px;
-  right: 12%;
-  top: 468px;
+  width: 190px;
+  right: 11.5%;
+  top: 464px;
 }
 .hero-decorations .shape-f {
   width: 317px;
@@ -516,10 +516,10 @@
 .features-surface {
   overflow: clip;
   background:
-    radial-gradient(ellipse at 28% 6%, #e4ff8b80, transparent 32%),
-    radial-gradient(ellipse at 4% 48%, #bfcbf180, transparent 32%),
-    radial-gradient(ellipse at 4% 92%, #e4ff8bb0, transparent 26%),
-    radial-gradient(ellipse at 99% 100%, #c3cef590, transparent 35%), #fafafa;
+    radial-gradient(ellipse at 28% 6%, #e4ff8b40, transparent 42%),
+    radial-gradient(ellipse at 4% 48%, #bfcbf140, transparent 42%),
+    radial-gradient(ellipse at 4% 92%, #e4ff8b50, transparent 36%),
+    radial-gradient(ellipse at 99% 100%, #c3cef540, transparent 45%), #fff;
 }
 .feature-row {
   display: grid;
@@ -691,6 +691,7 @@
   position: relative;
   overflow: hidden;
   min-height: 488px;
+  background-color: #003be2;
   padding: 84px 0;
   text-align: center;
 }
@@ -707,45 +708,45 @@
   font-size: 18px;
 }
 .cta-decorations .shape-a {
-  width: 266px;
-  left: -100px;
-  top: -95px;
+  width: 240px;
+  left: -12px;
+  top: -130px;
 }
 .cta-decorations .shape-b {
-  width: 140px;
-  left: 14%;
-  top: 28px;
+  width: 177px;
+  left: 178px;
+  top: 6px;
 }
 .cta-decorations .shape-c {
-  width: 270px;
-  left: 4%;
-  bottom: -150px;
+  width: 344px;
+  left: 18px;
+  bottom: -152px;
 }
 .cta-decorations .shape-d {
-  width: 213px;
-  right: -35px;
-  top: 36px;
+  width: 220px;
+  right: 0;
+  top: 20px;
 }
 .cta-decorations .shape-e {
-  width: 145px;
-  right: 14%;
-  top: 24px;
+  width: 190px;
+  right: 182px;
+  top: 0;
 }
 .cta-decorations .shape-f {
-  width: 240px;
-  right: 3%;
-  bottom: -85px;
+  width: 330px;
+  right: 0;
+  bottom: -130px;
 }
 .cta-decorations .shape-g {
-  width: 130px;
-  left: -10px;
-  bottom: 74px;
+  width: 140px;
+  left: 0;
+  bottom: 78px;
 }
 .testimonials {
   padding: 80px 0 60px;
   background:
-    radial-gradient(ellipse at 65% 25%, #e8ff92bb, transparent 60%),
-    radial-gradient(ellipse at 8% 100%, #bac7f3cc, transparent 45%), #fafafa;
+    radial-gradient(ellipse at 65% 25%, #e8ff9255, transparent 65%),
+    radial-gradient(ellipse at 8% 100%, #bac7f355, transparent 55%), #fff;
   border-bottom: 1px solid var(--neutral-200);
 }
 .testimonial-intro {
@@ -796,7 +797,7 @@
 .footer-main {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 120px;
+  gap: 40px;
 }
 .newsletter > p {
   font-size: 14px;
@@ -804,6 +805,7 @@
   white-space: nowrap;
 }
 .newsletter-form {
+  max-width: 504px;
   display: flex;
   align-items: center;
   gap: 24px;

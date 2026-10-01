@@ -50,17 +50,18 @@
 }
 .auth-ring {
   width: 150px;
-  top: 20px;
+  top: 14px;
   left: 32px;
 }
 .auth-helix {
   width: 150px;
-  top: 335px;
+  top: 300px;
   left: 370px;
+  z-index: 3;
 }
 .auth-pyramid {
-  width: 160px;
-  top: 410px;
+  width: 190px;
+  top: 398px;
   left: -16px;
 }
 .auth-art > .happy-card {

@@ -88,6 +88,41 @@
   .testimonial-intro h2 {
     font-size: 36px;
   }
+  .cta-decorations .shape-a {
+    width: 150px;
+    left: -60px;
+    top: -100px;
+  }
+  .cta-decorations .shape-b {
+    width: 100px;
+    left: 60px;
+    top: -20px;
+  }
+  .cta-decorations .shape-c {
+    width: 190px;
+    left: -20px;
+    bottom: -85px;
+  }
+  .cta-decorations .shape-d {
+    width: 100px;
+    right: -65px;
+    top: 20px;
+  }
+  .cta-decorations .shape-e {
+    width: 100px;
+    right: 0;
+    top: -10px;
+  }
+  .cta-decorations .shape-f {
+    width: 190px;
+    right: -50px;
+    bottom: -90px;
+  }
+  .cta-decorations .shape-g {
+    width: 80px;
+    left: -55px;
+    bottom: 40px;
+  }
   .footer-main {
     gap: 56px;
   }
@@ -531,9 +566,9 @@
     display: none;
   }
   .cta-decorations .shape-c {
-    width: 150px;
-    left: -30px;
-    bottom: -100px;
+    width: 190px;
+    left: -40px;
+    bottom: -85px;
   }
   .cta-decorations .shape-d {
     width: 100px;
