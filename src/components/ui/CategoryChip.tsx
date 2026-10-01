@@ -1,0 +1,19 @@
+export function CategoryChip({
+  label,
+  active,
+  onClick,
+}: {
+  label: string
+  active: boolean
+  onClick: () => void
+}) {
+  return (
+    <button
+      className={`category-chip ${active ? 'active' : ''}`}
+      aria-pressed={active}
+      onClick={onClick}
+    >
+      {label}
+    </button>
+  )
+}
