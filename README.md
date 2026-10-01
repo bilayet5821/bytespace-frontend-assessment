@@ -1,90 +1,174 @@
 # ByteSpace Frontend Assessment
 
-A responsive implementation of the ByteSpace landing page for the Doin Tech Limited Jr. Software Engineer (Frontend) assessment, built from the supplied Figma references. The required Home page and bonus Login/Register pages are implemented as React components.
+A responsive frontend implementation of the **ByteSpace** online learning platform, developed for the **Doin Tech Limited — Jr. Software Engineer (Frontend) Assessment** based on the provided Figma design.
 
-## Scope and features
+The project includes the complete required landing page along with bonus Login and Register pages, responsive layouts, reusable React components, accessibility-focused interactions, and production deployment on Vercel.
 
-- Complete Home page: header, hero and search, partner placeholder strip, course discovery/categories, six reusable course cards, learning paths, professional growth, course creator features, creator CTA, testimonials and footer.
-- Responsive navigation and layouts for desktop, laptop, tablet and mobile.
-- Local course search, category filtering, empty/reset states and expandable categories.
-- `/login` and `/register` with labelled controls and browser/client-side validation.
-- Keyboard focus indicators, skip link, accessible mobile navigation and dismissible dialogs.
-- Forms explain their frontend-only behavior. They create no accounts, start no sessions and send no subscriptions. Social sign-in is not connected.
+## Live Demo
 
-## Stack
+**Website:**  
+https://bytespace-frontend-assessment-coral.vercel.app/
 
-React, Vite, TypeScript, React Router and CSS. Production dependencies are limited to React, routing and the licensed Poppins font package. Oxlint, TypeScript, Prettier, Playwright and axe-core support development checks.
+**GitHub Repository:**  
+https://github.com/bilayet5821/bytespace-frontend-assessment
 
-## Local setup
+**Pull Request:**  
+https://github.com/bilayet5821/bytespace-frontend-assessment/pull/1
 
-Use Node.js 24 LTS and npm. From this directory:
+## Pages
+
+- Home — `/`
+- Login — `/login`
+- Register — `/register`
+
+Login and Register are frontend-only demo pages with client-side validation. No backend authentication service is connected.
+
+## Features
+
+- Responsive Header and Navigation
+- Hero section with search
+- Partner section
+- Course discovery and category filtering
+- Reusable course cards
+- Learning-path categories
+- Professional Growth section
+- Creator features section
+- Creator CTA
+- Testimonials
+- Newsletter and Footer
+- Bonus Login page
+- Bonus Register page
+- Responsive desktop, tablet and mobile layouts
+- Keyboard-friendly navigation and accessible form controls
+
+## Tech Stack
+
+- React
+- TypeScript
+- Vite
+- React Router
+- CSS
+- Poppins
+- Satoshi
+- Playwright
+- axe-core
+- Oxlint
+- Prettier
+
+## Run Locally
+
+Clone the repository:
+
+```bash
+git clone https://github.com/bilayet5821/bytespace-frontend-assessment.git
+cd bytespace-frontend-assessment
+```
+
+Install dependencies:
 
 ```bash
 npm ci
+```
+
+Start the development server:
+
+```bash
 npm run dev
 ```
 
-Open the local URL printed by Vite. Routes: `/`, `/login`, `/register`.
+Then open the local URL shown by Vite.
 
-## Checks and production build
+## Production Build
 
 ```bash
 npm run lint
-npm run format:check
 npm run typecheck
+npm run format:check
 npm run build
-npm run preview
 ```
 
-Vite writes the production build to `dist/`. A hosting provider must serve `index.html` for the client routes `/login` and `/register` so direct refreshes work.
+## Verification
 
-For reproducible browser checks, install Playwright's Chromium once and build first:
+The implementation was verified across:
 
-```bash
-npx playwright install chromium
-npm run build
-npm run test:browser
-```
+- 320px
+- 390px
+- 768px
+- 1024px
+- 1440px
+- 1920px
 
-The harness serves the actual production build locally. It checks all three routes at 320, 390, 768, 1024, 1440 and 1920 pixels; direct refreshes; interactions and validation; images; browser errors; and automated WCAG A/AA rules. Results are written to `verification/browser-verification.json`, with screenshots in the ignored `verification/screenshots/` directory. Automated accessibility checks supplement manual review; they do not certify complete accessibility compliance.
+Final verification results:
 
-## Project structure
-
-| Directory | Responsibility |
+| Check | Result |
 | --- | --- |
-| `src/app/` | Application and route configuration |
-| `src/pages/` | Home, Login and Register composition |
-| `src/sections/` | Landing-page sections |
-| `src/components/layout/` | Header and footer |
-| `src/components/ui/` | Icons, chips, search, section heading and dialog |
-| `src/components/courses/` | Course and learning-path cards |
-| `src/components/decorative/` | Reconstructed floating stats and avatar stacks |
-| `src/components/auth/` | Shared auth layout, form and field |
-| `src/data/` | Course, category and testimonial content |
-| `src/styles/` | Design tokens, global styles, Home, responsive and auth styles |
-| `public/assets/` | Selected genuine photographs, logo and decorative assets |
-| `public/licenses/` | Poppins Open Font License |
-| `scripts/` | Production-browser verification harness |
-| `docs/` | Asset/design notes, verification report and prepared PR description |
+| Route / viewport cases | 18/18 Passed |
+| Browser assertions | 82/82 Passed |
+| Lint | Passed |
+| TypeScript | Passed |
+| Formatting | Passed |
+| Production build | Passed |
+| Horizontal overflow | 0 |
+| Broken images | 0 |
+| Console/runtime errors | 0 |
+| Automated accessibility violations | 0 |
 
-## Responsive approach
+Direct route refreshes were also verified for:
 
-The desktop container is capped at 1200 pixels, matching the 1440-pixel reference with 120-pixel margins. Course cards change from three to two to one column. Learning paths use six, three or two columns. Feature content and footer stack at smaller widths, and mobile navigation opens as an accessible menu. Decorative graphics are repositioned/scaled and clipped inside their owning sections. Auth pages retain the blue grid and white form panel while removing nonessential artwork on narrow screens.
+- `/`
+- `/login`
+- `/register`
 
-## Design implementation
+## Project Structure
 
-[Figma design](https://www.figma.com/design/26TBgRjmpuxudcErJsHUfy/ByteSpace-New-Check-website?node-id=0-1) and the supplied high-resolution screenshots informed the implementation. Layout, text, controls and cards are live HTML/CSS, not screenshots.
+```text
+src/
+├── app/
+├── pages/
+├── sections/
+├── components/
+│   ├── layout/
+│   ├── ui/
+│   ├── courses/
+│   ├── decorative/
+│   └── auth/
+├── data/
+└── styles/
 
-Poppins SemiBold is served through `@fontsource/poppins` under the [SIL Open Font License](https://github.com/google/fonts/blob/main/ofl/poppins/OFL.txt). Satoshi Regular/Medium/Bold is requested from the official [Fontshare API](https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap), with Arial/sans-serif fallback. No Satoshi font files are bundled or redistributed. See [asset and design notes](docs/DESIGN_NOTES.md) for source limitations and adaptation details.
+public/
+├── assets/
+└── licenses/
 
-## Git workflow
+scripts/
+docs/
+verification/
+```
 
-`main` contains the clean base commit. Application development is on `feature/bytespace-landing` with incremental commits. After local verification, the feature branch is ready for a Pull Request targeting `main`. See [prepared PR description](docs/PULL_REQUEST.md).
+The application is built with reusable React components and data-driven rendering rather than using screenshots as webpage sections.
 
-The public GitHub repository and PR are pending creation/push. This local implementation has not been merged.
+## Design Reference
 
-## Deployment status
+The interface was implemented from the supplied **ByteSpace Figma design** and high-resolution reference assets.
 
-No deployment has been performed. There is no verified Vercel production URL. Deployment and employer submission are deferred until review and further instruction.
+Minor differences may exist where original standalone assets were unavailable, such as some placeholder logos, icons, and image crops.
 
-See [verification report](docs/VERIFICATION.md) for the actual local results and outstanding handoff tasks.
+## Git Workflow
+
+Development was completed on:
+
+```text
+feature/bytespace-landing
+```
+
+The implementation was developed through incremental commits and submitted through a Pull Request before being merged into `main`.
+
+## Deployment
+
+The project is deployed publicly using **Vercel**.
+
+**Production URL:**  
+https://bytespace-frontend-assessment-coral.vercel.app/
+
+---
+
+Built for the **Doin Tech Limited Jr. Software Engineer (Frontend) Assessment**.
