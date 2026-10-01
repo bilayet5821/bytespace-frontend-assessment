@@ -80,3 +80,25 @@
 .search-summary button { border:0; background:none; text-decoration:underline; color:var(--blue); margin-left:10px; }
 .empty-courses { text-align:center; padding:32px; }
 .empty-courses .button { margin-top:20px; }
+.learning-paths { padding-top:72px; padding-bottom:120px; }
+.learning-paths h2 { font-size:36px; }
+.learning-path-grid { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:40px; margin-top:72px; }
+.learning-path-card { border:1px solid var(--neutral-200); border-radius:24px; min-height:168px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; padding:16px 8px; }
+.learning-path-card:hover { border-color:var(--blue); }
+.learning-path-card>span { width:60px; height:60px; background:var(--lime-bright); border-radius:50%; display:grid; place-items:center; }
+.learning-path-card .icon { width:32px; height:32px; }
+.learning-path-card p { font-size:20px; white-space:nowrap; line-height:1.2; }
+.features-surface { background:radial-gradient(ellipse at 28% 6%,#e4ff8b80,transparent 32%),radial-gradient(ellipse at 4% 48%,#bfcbf180,transparent 32%),radial-gradient(ellipse at 4% 92%,#e4ff8bb0,transparent 26%),radial-gradient(ellipse at 99% 100%,#c3cef590,transparent 35%),#fafafa; }
+.feature-row { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; }
+.professional-growth { padding-top:120px; padding-bottom:64px; min-height:750px; }
+.feature-copy h2 { max-width:600px; }
+.feature-copy>p { margin-top:44px; font-size:18px; max-width:480px; color:var(--neutral-700); }
+.growth-stats { display:flex; gap:56px; margin:44px 0 0; }
+.growth-stats dt { color:var(--blue); font-weight:700; font-size:36px; line-height:1.2; }
+.growth-stats dd { margin:8px 0 0; color:var(--neutral-700); font-size:18px; }
+.feature-visual { position:relative; min-width:0; }
+.growth-visual { height:560px; }
+.growth-course { width:373px; position:absolute; top:0; left:0; }
+.growth-student { position:absolute; width:722px; height:515px; max-width:none; object-fit:contain; left:-22px; bottom:-34px; }
+.growth-visual>.progress-card { position:absolute; top:212px; right:-20px; z-index:2; }
+.growth-helix { width:160px; right:-22px; top:84px; z-index:3; }
