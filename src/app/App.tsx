@@ -1,10 +1,30 @@
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
+import { useLayoutEffect } from 'react'
+import { BrowserRouter, Link, Route, Routes, useLocation } from 'react-router-dom'
 import { HomePage } from '../pages/HomePage'
 import { LoginPage } from '../pages/LoginPage'
 import { RegisterPage } from '../pages/RegisterPage'
+function ScrollToTop() {
+  const { pathname } = useLocation()
+
+  useLayoutEffect(() => {
+    const previous = window.history.scrollRestoration
+    window.history.scrollRestoration = 'manual'
+    return () => {
+      window.history.scrollRestoration = previous
+    }
+  }, [])
+
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+  }, [pathname])
+
+  return null
+}
+
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <a className="skip-link" href="#main">
         Skip to content
       </a>

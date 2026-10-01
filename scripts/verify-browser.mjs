@@ -1,4 +1,4 @@
-import { chromium } from '@playwright/test'
+import { chromium, expect } from '@playwright/test'
 import AxeBuilder from '@axe-core/playwright'
 import assert from 'node:assert/strict'
 import { createServer } from 'node:http'
@@ -150,12 +150,34 @@ try {
       assert.equal(layout.document, layout.viewport, `Overflow: ${route} at ${width}`)
       assert.deepEqual(layout.broken, [], `Broken images: ${route} at ${width}`)
       viewportCases.push({ route, width, horizontalOverflow: 0, brokenImages: 0 })
+      check(
+        `Initial route starts at top ${route} at ${width}`,
+        (await page.evaluate(() => scrollY)) === 0,
+      )
       const slug = route === '/' ? 'home' : route.slice(1)
       if (width === 1440 || width === 390) {
         await page.screenshot({
           path: join(out, 'screenshots', `${slug}-${width}.png`),
           fullPage: width === 1440,
         })
+        if (route === '/' && width === 1440) {
+          for (const [name, selector] of [
+            ['hero', '.hero'],
+            ['professional-growth', '.professional-growth'],
+            ['creator-cta', '.creator-cta'],
+            ['testimonials', '.testimonials'],
+          ]) {
+            const bounds = await page.locator(selector).evaluate((el) => ({
+              y: el.getBoundingClientRect().top + scrollY,
+              height: el.getBoundingClientRect().height,
+            }))
+            await page.screenshot({
+              path: join(out, 'screenshots', `${name}-1440.png`),
+              fullPage: true,
+              clip: { x: 0, y: bounds.y, width: 1440, height: bounds.height },
+            })
+          }
+        }
         if (route === '/' && width === 390) {
           for (const selector of [
             '.discover',
@@ -189,8 +211,55 @@ try {
     )
     await page.reload()
     check(`Direct refresh ${route}`, (await page.locator('h1').count()) === 1)
+    check(`Direct refresh starts at top ${route}`, (await page.evaluate(() => scrollY)) === 0)
+  }
+  for (const width of [1440, 1920]) {
+    await load('/', width)
+    const typography = await page.locator('.hero h1').evaluate((el) => {
+      const style = getComputedStyle(el)
+      return { size: parseFloat(style.fontSize), lineHeight: parseFloat(style.lineHeight) }
+    })
+    check(
+      `Hero keeps 72px / 120% typography at ${width}`,
+      typography.size === 72 && Math.abs(typography.lineHeight - 86.4) < 0.01,
+    )
   }
   if (!homeOnly) {
+    for (const width of [320, 390, 768, 1024, 1440, 1920]) {
+      await load('/', width, 640)
+      await page.evaluate(() =>
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'instant' }),
+      )
+      await page.locator('.nav-account a[href="/login"]').evaluate((el) => el.click())
+      await page.waitForURL(origin + '/login')
+      await expect.poll(() => page.evaluate(() => scrollY)).toBe(0)
+      check(
+        `Home to Login resets scroll at ${width}`,
+        new URL(page.url()).pathname === '/login' && (await page.evaluate(() => scrollY)) === 0,
+      )
+      await page.getByRole('link', { name: 'Create an account' }).click()
+      await page.waitForURL(origin + '/register')
+      await expect.poll(() => page.evaluate(() => scrollY)).toBe(0)
+      check(
+        `Login to Register resets scroll at ${width}`,
+        new URL(page.url()).pathname === '/register' && (await page.evaluate(() => scrollY)) === 0,
+      )
+      await page.getByRole('link', { name: 'Login', exact: true }).click()
+      await page.waitForURL(origin + '/login')
+      await expect.poll(() => page.evaluate(() => scrollY)).toBe(0)
+      check(
+        `Register to Login resets scroll at ${width}`,
+        new URL(page.url()).pathname === '/login' && (await page.evaluate(() => scrollY)) === 0,
+      )
+      await load('/', width, 640)
+      await page.getByRole('link', { name: 'Join as Creator' }).click()
+      await page.waitForURL(origin + '/register')
+      await expect.poll(() => page.evaluate(() => scrollY)).toBe(0)
+      check(
+        `Home to Register resets scroll at ${width}`,
+        new URL(page.url()).pathname === '/register' && (await page.evaluate(() => scrollY)) === 0,
+      )
+    }
     await load('/')
     await page
       .getByRole('navigation', { name: 'Main navigation' })

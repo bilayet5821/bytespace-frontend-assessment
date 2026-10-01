@@ -11,7 +11,7 @@ computing gzip size...
 dist/index.html                                        0.87 kB │ gzip:  0.48 kB
 dist/assets/poppins-latin-600-normal-zEkxB9Mr.woff2    8.00 kB
 dist/assets/poppins-latin-600-normal-BJdTmd5m.woff    10.60 kB
-dist/assets/index-DKIQiFZm.css                        27.23 kB │ gzip:  6.34 kB
-dist/assets/index-B931wBva.js                        286.05 kB │ gzip: 90.18 kB
+dist/assets/index-8P-OylmS.css                        27.23 kB │ gzip:  6.34 kB
+dist/assets/index-g7OJgnSy.js                        286.36 kB │ gzip: 90.29 kB
 
-✓ built in 161ms
+✓ built in 193ms
