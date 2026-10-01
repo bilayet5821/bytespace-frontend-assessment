@@ -10,8 +10,8 @@ computing gzip size...
 dist/index.html                                        0.87 kB │ gzip:  0.48 kB
 dist/assets/poppins-latin-600-normal-zEkxB9Mr.woff2    8.00 kB
 dist/assets/poppins-latin-600-normal-BJdTmd5m.woff    10.60 kB
-dist/assets/index-uue5FKcQ.css                        26.77 kB │ gzip:  6.29 kB
-dist/assets/index-PSb26UuD.js                        286.05 kB │ gzip: 90.18 kB
+dist/assets/index-CbTAVaIP.css                        26.77 kB │ gzip:  6.29 kB
+dist/assets/index-CFnVBg6L.js                        286.05 kB │ gzip: 90.18 kB
 
-✓ built in 222ms
+✓ built in 198ms
 npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.

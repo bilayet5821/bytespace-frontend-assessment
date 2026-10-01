@@ -168,7 +168,7 @@
     font-size: 20px;
   }
   .course-image > img {
-    height: 264px;
+    height: 284px;
     object-fit: cover;
     transform: none;
     object-position: top;
@@ -423,7 +423,7 @@
   .course-image > img {
     height: auto;
     object-fit: initial;
-    transform: scale(1.34);
+    transform: scale(1.44);
   }
   .course-meta {
     left: 12px;
