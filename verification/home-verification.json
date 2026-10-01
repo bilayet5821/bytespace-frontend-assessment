@@ -1,0 +1,75 @@
+{
+  "status": "passed",
+  "scope": "required-home",
+  "viewportCases": [
+    {
+      "route": "/",
+      "width": 320,
+      "horizontalOverflow": 0,
+      "brokenImages": 0
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "horizontalOverflow": 0,
+      "brokenImages": 0
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "horizontalOverflow": 0,
+      "brokenImages": 0
+    },
+    {
+      "route": "/",
+      "width": 1024,
+      "horizontalOverflow": 0,
+      "brokenImages": 0
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "horizontalOverflow": 0,
+      "brokenImages": 0
+    },
+    {
+      "route": "/",
+      "width": 1920,
+      "horizontalOverflow": 0,
+      "brokenImages": 0
+    }
+  ],
+  "assertions": 20,
+  "assertionNames": [
+    "Direct refresh /",
+    "Six featured cards",
+    "Search matches one course",
+    "Clear search restores six cards",
+    "Category filters one course",
+    "Empty category explains results",
+    "Empty state reset restores cards",
+    "More categories expands",
+    "More categories collapses",
+    "Creator CTA routes to register",
+    "Newsletter rejects invalid email",
+    "Newsletter shows truthful frontend status",
+    "Course bag dialog opens",
+    "Dialog closes with Escape",
+    "Mobile menu opens",
+    "Mobile menu closes after navigation",
+    "Courses link reaches courses section",
+    "No browser console or runtime errors",
+    "No failed resource requests",
+    "No backend mutation requests"
+  ],
+  "accessibility": [
+    {
+      "route": "/",
+      "violations": []
+    }
+  ],
+  "consoleErrors": [],
+  "failedRequests": [],
+  "backendMutations": [],
+  "fontTransport": "Official Fontshare resources fetched with system curl TLS validation (sandbox proxy compatibility)"
+}

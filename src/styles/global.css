@@ -24,7 +24,7 @@ h3 { font-size: var(--heading-xs); }
 .skip-link:focus { transform: translateY(0); }
 .blue-grid { background-color: var(--blue-deep); background-image: linear-gradient(#ffffff18 1px,transparent 1px),linear-gradient(90deg,#ffffff18 1px,transparent 1px); background-size: 120px 120px; color: white; }
 .section-heading { text-align: center; color: var(--heading-ink); }
-.section-heading p { max-width: 960px; margin: 24px auto 0; color: var(--neutral-400); font-size: var(--body-l); line-height: 1.6; }
+.section-heading p { max-width: 960px; margin: 24px auto 0; color: var(--neutral-500); font-size: var(--body-l); line-height: 1.6; }
 .decor { position: absolute; pointer-events: none; user-select: none; }
 .page-message { padding: 140px 24px; text-align: center; }
 .page-message p { margin: 24px 0; }
