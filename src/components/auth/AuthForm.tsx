@@ -1,8 +1,130 @@
-import {useState} from 'react'
-import {Link} from 'react-router-dom'
-import {AuthFormField} from './AuthFormField'
-import {NoticeDialog} from '../ui/NoticeDialog'
-export function AuthForm({mode}:{mode:'login'|'register'}){
- const login=mode==='login';const [valid,setValid]=useState(false),[social,setSocial]=useState('')
- return <><div className="auth-title-group"><p>{login?'Sign In':'Create an Account'}</p><h1 id="auth-title">{login?'Welcome Back':<>Welcome to<br/>ByteSpace</>}</h1></div><form className="auth-form" onChange={e=>{setValid(false);const target=e.target;if(target instanceof HTMLInputElement)target.setCustomValidity('')}} onSubmit={e=>{e.preventDefault();if(!login){const name=e.currentTarget.elements.namedItem('fullName') as HTMLInputElement;if(name.value.trim().length<2){name.setCustomValidity('Please enter your full name.');name.reportValidity();return}}setValid(true)}}>{!login&&<AuthFormField name="fullName" label="Full Name" type="text" placeholder="Jamie Davis" autoComplete="name" minLength={2}/>}<AuthFormField name="email" label="Email" type="email" placeholder="designer@example.com" autoComplete="email"/><AuthFormField name="password" label="Password" type="password" placeholder="********" autoComplete={login?'current-password':'new-password'} minLength={8}/><div className="auth-actions"><button className="button" type="submit">{login?'Sign In':'Continue'}</button></div>{valid&&<p className="auth-status" role="status">Fields validated. No account is created and no sign-in session is started in this frontend preview.</p>}</form>{login&&<><div className="auth-divider"><span/>or<span/></div><div className="social-controls"><button className="social-button facebook" type="button" aria-label="Sign in with Facebook" onClick={()=>setSocial('Facebook')}><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="currentColor"/><path d="M18.5 31V19h4l.6-4.6h-4.6v-2.8c0-1.3.4-2.2 2.3-2.2h2.5V5.3c-.4-.1-1.9-.2-3.6-.2-3.6 0-6.1 2.2-6.1 6.2v3.1H9.5V19h4.1v12Z" fill="white"/></svg></button><button className="social-button google" type="button" aria-label="Sign in with Google" onClick={()=>setSocial('Google')}><span aria-hidden="true">G</span></button></div></>}<p className="auth-footer">{login?'New user?':'Already have an account?'} <Link className="text-link" to={login?'/register':'/login'}>{login?'Create an account':'Login'}</Link></p>{social&&<NoticeDialog title={`Sign in with ${social}`} message="Social sign-in is not connected in this frontend preview. No authentication request has been sent." onClose={()=>setSocial('')}/>}</>
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { AuthFormField } from './AuthFormField'
+import { NoticeDialog } from '../ui/NoticeDialog'
+export function AuthForm({ mode }: { mode: 'login' | 'register' }) {
+  const login = mode === 'login'
+  const [valid, setValid] = useState(false),
+    [social, setSocial] = useState('')
+  return (
+    <>
+      <div className="auth-title-group">
+        <p>{login ? 'Sign In' : 'Create an Account'}</p>
+        <h1 id="auth-title">
+          {login ? (
+            'Welcome Back'
+          ) : (
+            <>
+              Welcome to
+              <br />
+              ByteSpace
+            </>
+          )}
+        </h1>
+      </div>
+      <form
+        className="auth-form"
+        onChange={(e) => {
+          setValid(false)
+          const target = e.target
+          if (target instanceof HTMLInputElement) target.setCustomValidity('')
+        }}
+        onSubmit={(e) => {
+          e.preventDefault()
+          if (!login) {
+            const name = e.currentTarget.elements.namedItem('fullName') as HTMLInputElement
+            if (name.value.trim().length < 2) {
+              name.setCustomValidity('Please enter your full name.')
+              name.reportValidity()
+              return
+            }
+          }
+          setValid(true)
+        }}
+      >
+        {!login && (
+          <AuthFormField
+            name="fullName"
+            label="Full Name"
+            type="text"
+            placeholder="Jamie Davis"
+            autoComplete="name"
+            minLength={2}
+          />
+        )}
+        <AuthFormField
+          name="email"
+          label="Email"
+          type="email"
+          placeholder="designer@example.com"
+          autoComplete="email"
+        />
+        <AuthFormField
+          name="password"
+          label="Password"
+          type="password"
+          placeholder="********"
+          autoComplete={login ? 'current-password' : 'new-password'}
+          minLength={8}
+        />
+        <div className="auth-actions">
+          <button className="button" type="submit">
+            {login ? 'Sign In' : 'Continue'}
+          </button>
+        </div>
+        {valid && (
+          <p className="auth-status" role="status">
+            Fields validated. No account is created and no sign-in session is started in this
+            frontend preview.
+          </p>
+        )}
+      </form>
+      {login && (
+        <>
+          <div className="auth-divider">
+            <span />
+            or
+            <span />
+          </div>
+          <div className="social-controls">
+            <button
+              className="social-button facebook"
+              type="button"
+              aria-label="Sign in with Facebook"
+              onClick={() => setSocial('Facebook')}
+            >
+              <svg viewBox="0 0 32 32" aria-hidden="true">
+                <circle cx="16" cy="16" r="16" fill="currentColor" />
+                <path
+                  d="M18.5 31V19h4l.6-4.6h-4.6v-2.8c0-1.3.4-2.2 2.3-2.2h2.5V5.3c-.4-.1-1.9-.2-3.6-.2-3.6 0-6.1 2.2-6.1 6.2v3.1H9.5V19h4.1v12Z"
+                  fill="white"
+                />
+              </svg>
+            </button>
+            <button
+              className="social-button google"
+              type="button"
+              aria-label="Sign in with Google"
+              onClick={() => setSocial('Google')}
+            >
+              <span aria-hidden="true">G</span>
+            </button>
+          </div>
+        </>
+      )}
+      <p className="auth-footer">
+        {login ? 'New user?' : 'Already have an account?'}{' '}
+        <Link className="text-link" to={login ? '/register' : '/login'}>
+          {login ? 'Create an account' : 'Login'}
+        </Link>
+      </p>
+      {social && (
+        <NoticeDialog
+          title={`Sign in with ${social}`}
+          message="Social sign-in is not connected in this frontend preview. No authentication request has been sent."
+          onClose={() => setSocial('')}
+        />
+      )}
+    </>
+  )
 }

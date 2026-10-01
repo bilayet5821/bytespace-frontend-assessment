@@ -1,3 +1,60 @@
-import type {ReactNode} from 'react'
-const marks:ReactNode[]=[<><circle cx="20" cy="20" r="18"/><path d="M2 11c12-5 20 12 36 7M2 20c12-5 20 12 36 7M3 28c12-5 20 12 33 7" stroke="#f5f5f6" strokeWidth="3" fill="none"/></>,<>{Array.from({length:12},(_,i)=><path key={i} d="M18 1h4l-1 12h-2Z" transform={`rotate(${i*30} 20 20)`}/>)}<circle cx="20" cy="20" r="6"/></>,<><circle cx="20" cy="20" r="18"/><path d="m22 6-12 15h9l-2 13 14-17H21Z" fill="#f5f5f6"/></>,<><circle cx="20" cy="20" r="18"/><path d="M20 8c-6 0-6 10 0 10s6-10 0-10M20 22c-6 0-6 10 0 10s6-10 0-10M8 20c0 6 10 6 10 0S8 14 8 20M22 20c0 6 10 6 10 0s-10-6-10 0" fill="#f5f5f6"/></>,<>{Array.from({length:9},(_,i)=><ellipse key={i} cx="20" cy="20" rx={4+i*1.7} ry={18} transform={`rotate(${i*12} 20 20)`} fill="none" stroke="currentColor" strokeWidth=".7"/>)}</>]
-export function Partners(){return <section className="partners" aria-label="Partner placeholders"><div className="container partner-list">{marks.map((mark,i)=><div className="partner-logo" key={i}><svg viewBox="0 0 40 40" fill="currentColor" aria-hidden="true">{mark}</svg><span>Logoipsum</span></div>)}</div></section>}
+import type { ReactNode } from 'react'
+const marks: ReactNode[] = [
+  <>
+    <circle cx="20" cy="20" r="18" />
+    <path
+      d="M2 11c12-5 20 12 36 7M2 20c12-5 20 12 36 7M3 28c12-5 20 12 33 7"
+      stroke="#f5f5f6"
+      strokeWidth="3"
+      fill="none"
+    />
+  </>,
+  <>
+    {Array.from({ length: 12 }, (_, i) => (
+      <path key={i} d="M18 1h4l-1 12h-2Z" transform={`rotate(${i * 30} 20 20)`} />
+    ))}
+    <circle cx="20" cy="20" r="6" />
+  </>,
+  <>
+    <circle cx="20" cy="20" r="18" />
+    <path d="m22 6-12 15h9l-2 13 14-17H21Z" fill="#f5f5f6" />
+  </>,
+  <>
+    <circle cx="20" cy="20" r="18" />
+    <path
+      d="M20 8c-6 0-6 10 0 10s6-10 0-10M20 22c-6 0-6 10 0 10s6-10 0-10M8 20c0 6 10 6 10 0S8 14 8 20M22 20c0 6 10 6 10 0s-10-6-10 0"
+      fill="#f5f5f6"
+    />
+  </>,
+  <>
+    {Array.from({ length: 9 }, (_, i) => (
+      <ellipse
+        key={i}
+        cx="20"
+        cy="20"
+        rx={4 + i * 1.7}
+        ry={18}
+        transform={`rotate(${i * 12} 20 20)`}
+        fill="none"
+        stroke="currentColor"
+        strokeWidth=".7"
+      />
+    ))}
+  </>,
+]
+export function Partners() {
+  return (
+    <section className="partners" aria-label="Partner placeholders">
+      <div className="container partner-list">
+        {marks.map((mark, i) => (
+          <div className="partner-logo" key={i}>
+            <svg viewBox="0 0 40 40" fill="currentColor" aria-hidden="true">
+              {mark}
+            </svg>
+            <span>Logoipsum</span>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}

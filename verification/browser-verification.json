@@ -1,0 +1,170 @@
+{
+  "status": "passed",
+  "scope": "home-login-register",
+  "viewportCases": [
+    {
+      "route": "/",
+      "width": 320,
+      "horizontalOverflow": 0,
+      "brokenImages": 0
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "horizontalOverflow": 0,
+      "brokenImages": 0
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "horizontalOverflow": 0,
+      "brokenImages": 0
+    },
+    {
+      "route": "/",
+      "width": 1024,
+      "horizontalOverflow": 0,
+      "brokenImages": 0
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "horizontalOverflow": 0,
+      "brokenImages": 0
+    },
+    {
+      "route": "/",
+      "width": 1920,
+      "horizontalOverflow": 0,
+      "brokenImages": 0
+    },
+    {
+      "route": "/login",
+      "width": 320,
+      "horizontalOverflow": 0,
+      "brokenImages": 0
+    },
+    {
+      "route": "/login",
+      "width": 390,
+      "horizontalOverflow": 0,
+      "brokenImages": 0
+    },
+    {
+      "route": "/login",
+      "width": 768,
+      "horizontalOverflow": 0,
+      "brokenImages": 0
+    },
+    {
+      "route": "/login",
+      "width": 1024,
+      "horizontalOverflow": 0,
+      "brokenImages": 0
+    },
+    {
+      "route": "/login",
+      "width": 1440,
+      "horizontalOverflow": 0,
+      "brokenImages": 0
+    },
+    {
+      "route": "/login",
+      "width": 1920,
+      "horizontalOverflow": 0,
+      "brokenImages": 0
+    },
+    {
+      "route": "/register",
+      "width": 320,
+      "horizontalOverflow": 0,
+      "brokenImages": 0
+    },
+    {
+      "route": "/register",
+      "width": 390,
+      "horizontalOverflow": 0,
+      "brokenImages": 0
+    },
+    {
+      "route": "/register",
+      "width": 768,
+      "horizontalOverflow": 0,
+      "brokenImages": 0
+    },
+    {
+      "route": "/register",
+      "width": 1024,
+      "horizontalOverflow": 0,
+      "brokenImages": 0
+    },
+    {
+      "route": "/register",
+      "width": 1440,
+      "horizontalOverflow": 0,
+      "brokenImages": 0
+    },
+    {
+      "route": "/register",
+      "width": 1920,
+      "horizontalOverflow": 0,
+      "brokenImages": 0
+    }
+  ],
+  "assertions": 35,
+  "assertionNames": [
+    "Direct refresh /",
+    "Direct refresh /login",
+    "Direct refresh /register",
+    "Header Sign In reaches login",
+    "Header Join Us reaches register",
+    "Creator CTA reaches register",
+    "Creators navigation reaches creator section",
+    "Six featured cards",
+    "Search matches one course",
+    "Clear search restores six cards",
+    "Category filters one course",
+    "Empty category explains results",
+    "Empty state reset restores cards",
+    "More categories expands",
+    "More categories collapses",
+    "Creator CTA routes to register",
+    "Newsletter rejects invalid email",
+    "Newsletter shows truthful frontend status",
+    "Course bag dialog opens",
+    "Dialog closes with Escape",
+    "Mobile menu opens",
+    "Mobile menu closes after navigation",
+    "Courses link reaches courses section",
+    "Required fields reject blank /login",
+    "Short password rejected /login",
+    "Client validation reports no real authentication /login",
+    "Required fields reject blank /register",
+    "Short password rejected /register",
+    "Client validation reports no real authentication /register",
+    "Login links to register",
+    "Register links to login",
+    "Social control explains unavailable service",
+    "No browser console or runtime errors",
+    "No failed resource requests",
+    "No backend mutation requests"
+  ],
+  "accessibility": [
+    {
+      "route": "/",
+      "violations": []
+    },
+    {
+      "route": "/login",
+      "violations": []
+    },
+    {
+      "route": "/register",
+      "violations": []
+    }
+  ],
+  "consoleErrors": [],
+  "failedRequests": [],
+  "backendMutations": [],
+  "fontTransport": "Official Fontshare resources fetched with system curl TLS validation (sandbox proxy compatibility)"
+}

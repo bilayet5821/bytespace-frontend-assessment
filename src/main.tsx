@@ -6,4 +6,8 @@ import './styles/home.css'
 import './styles/responsive.css'
 import './styles/auth.css'
 import App from './app/App.tsx'
-createRoot(document.getElementById('root')!).render(<StrictMode><App /></StrictMode>)
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)

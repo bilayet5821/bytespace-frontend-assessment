@@ -1,0 +1,27 @@
+[
+  {
+    "check": "install",
+    "command": "npm ci",
+    "exitCode": 0
+  },
+  {
+    "check": "lint",
+    "command": "npm run lint",
+    "exitCode": 0
+  },
+  {
+    "check": "format",
+    "command": "npm run format:check",
+    "exitCode": 0
+  },
+  {
+    "check": "typecheck",
+    "command": "npm run typecheck",
+    "exitCode": 0
+  },
+  {
+    "check": "build",
+    "command": "npm run build",
+    "exitCode": 0
+  }
+]
